@@ -1,0 +1,8 @@
+.edcbooks { max-width:200px; margin:0 auto; }
+.sidebar .widget .edcbooks ul {margin:7px 0 15px 0;}
+.outside { text-align:center; }
+.edc_icons_content { width:100%; text-align:center; margin:0; position:absolute; top:0px; left:0; background: #666\9; background: rgba(80, 80, 80, 0.75); }
+.edc_icons_content img {  display: inline-block; width:24px; height:24px; }
+.edc_icons_content_for_just_link { float:right; margin:0; }
+.edc_icons_content_for_just_link img {  display: inline-block; width:18px; height:18px; }
+.edc_icons { border:none; margin:7px 0 5px 0; }
