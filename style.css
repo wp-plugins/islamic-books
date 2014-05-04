@@ -1,4 +1,6 @@
-.edcbooks { max-width:200px; margin:0 auto; }
+.edcbooks { max-width:250px; margin:0 auto; }
+.edcbooks .edc_image_book { width:100%; margin: 0px 0px 0px 0px; }
+.edcbooks ul, .edcbooks ul li {  margin:0 0 0 0; padding: 0px 0px 0px 0px; }
 .sidebar .widget .edcbooks ul {margin:7px 0 15px 0;}
 .outside { text-align:center; }
 .edc_icons_content { width:100%; text-align:center; margin:0; position:absolute; top:0px; left:0; background: #666\9; background: rgba(80, 80, 80, 0.75); }
