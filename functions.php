@@ -6,7 +6,7 @@
 */
 include('files.php');
 
-$languages = array(
+$books_languages = array(
 "1"=>array("Afrikaans","za.png"),
 "2"=>array("Albanian","al.png"),
 "3"=>array("Amharic","amharic.png"),
@@ -108,7 +108,7 @@ class Free_Books_Widget extends WP_Widget {
 	}
 	
 	function EDC_BOOKS($EDC_BOOK="",$language_id="",$booksrand="",$edc_free_books_allow_source="",$edc_free_books_allow_download="",$edc_free_books_allow_read="",$width="",$height="",$edc_slider_type=""){
-global $languages;
+global $books_languages;
 //0 = $EDC_BOOK[$i][0] => id
 //1 = $EDC_BOOK[$i][1] => title
 //2 = $EDC_BOOK[$i][2] => author
@@ -118,7 +118,7 @@ global $languages;
 //6 = $EDC_BOOK[$i][6] => language shortname
 //7 = $EDC_BOOK[$i][7] => source
 
-$language_name = $languages[$language_id][0];
+$language_name = $books_languages[$language_id][0];
 $EDC_BOOK = $EDC_BOOK[''.$language_name.''];
 	
 $books_count = count($EDC_BOOK);
@@ -168,7 +168,7 @@ return $code;
 }
 
 	public function widget( $args, $instance ) {
-		global $languages,$EDC_BOOK;
+		global $books_languages,$EDC_BOOK;
 		$title = apply_filters( 'widget_title', $instance['title'] );
 		$edc_free_books_id = $instance['edc_free_books_id'];
 		$edc_free_books_language_shortname = $instance['edc_free_books_language_shortname'];
@@ -184,11 +184,11 @@ return $code;
 		if(empty($edc_free_books_height)){ $height = 244; }else{ $height = $edc_free_books_height; }
 		if(empty($edc_free_books_limit)){ $books_limit = 1; }else{ $books_limit = $edc_free_books_limit; }
 
-$language_name = $languages[$edc_free_books_id][0];
-$language_flag = $languages[$edc_free_books_id][1];
+$language_name = $books_languages[$edc_free_books_id][0];
+$language_flag = $books_languages[$edc_free_books_id][1];
 
 $rands = rand(0,999);
-$languagescount = count($languages);
+$languagescount = count($books_languages);
 
 $bookscount = count($EDC_BOOK[''.$language_name.'']);
 if($books_limit > $bookscount){ $limit = $bookscount; }else{ $limit = $books_limit; }
@@ -285,7 +285,7 @@ $code .= $extracode;
 	}
 
 	public function form( $instance ) {
-		global $languages;
+		global $books_languages;
 		if ( isset( $instance[ 'title' ] ) ) {
 			$title = $instance[ 'title' ];
 			$edc_free_books_id = $instance['edc_free_books_id'];
@@ -308,8 +308,8 @@ $code .= $extracode;
 		
 		<p>
 		<select id="<?php echo $this->get_field_id('edc_free_books_id'); ?>" name="<?php echo $this->get_field_name('edc_free_books_id'); ?>">
-		<?php for($i = 1; $i <= count($languages); $i++): ?>
-		<option title="<?php echo $languages[$i][0]; ?>" value="<?php echo $i; ?>" <?php echo ( $edc_free_books_id == $i ) ? 'selected="selected"' : ''; ?>><?php echo $i.'- '.$languages[$i][0]; ?></option>
+		<?php for($i = 1; $i <= count($books_languages); $i++): ?>
+		<option title="<?php echo $books_languages[$i][0]; ?>" value="<?php echo $i; ?>" <?php echo ( $edc_free_books_id == $i ) ? 'selected="selected"' : ''; ?>><?php echo $i.'- '.$books_languages[$i][0]; ?></option>
 		<?php endfor; ?>
 		</select>
 		<label for="<?php echo $this->get_field_id('edc_free_books_id'); ?>"> 

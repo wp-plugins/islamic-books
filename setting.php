@@ -65,7 +65,7 @@ function edc_books_plugin_menu() {
 }
 
 function edc_free_books_options() {
-	global $languages;
+	global $books_languages;
 	if ( !current_user_can( 'manage_options' ) )  {
 		wp_die( __( 'You do not have sufficient permissions to access this page.' ) );
 	}
