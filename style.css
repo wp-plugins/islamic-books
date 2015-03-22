@@ -1,10 +1,58 @@
 .edcbooks { max-width:250px; margin:0 auto; }
-.edcbooks .edc_image_book { width:100%; margin: 0px 0px 0px 0px; }
+.edcbooks .edc_image_book { width:100%; min-height:300px; max-height:400px; margin: 0px 0px 0px 0px; }
 .edcbooks ul, .edcbooks ul li {  margin:0 0 0 0; padding: 0px 0px 0px 0px; }
 .sidebar .widget .edcbooks ul {margin:7px 0 15px 0;}
 .outside { text-align:center; }
-.edc_icons_content { width:100%; text-align:center; margin:0; position:absolute; top:0px; left:0; background: #666\9; background: rgba(80, 80, 80, 0.75); }
-.edc_icons_content img {  display: inline-block; width:24px; height:24px; }
+.edc_icons_content { width:100%; text-align:center; margin:0; position:absolute; bottom:0; left:0; background: #666\9; background: rgba(80, 80, 80, 0.75); }
+.edc_icons_content img {  display: inline-block; width:16px; height:16px; border:none; }
 .edc_icons_content_for_just_link { float:right; margin:0; }
 .edc_icons_content_for_just_link img {  display: inline-block; width:18px; height:18px; }
-.edc_icons { border:none; margin:7px 0 5px 0; }
+.edc_icons { border:none; margin:3px 0 3px 0; }
+
+
+#free-books { margin:0; border:0px solid #cccccc; padding:0; }
+#free-books { margin:0; border:1px solid #cccccc; background-color:#fff; padding:10px; margin-top:15px; }
+#free-books p { margin:0 0 5px 0; }
+#free-books p.title span { color:#333; }
+#free-books p.author span { color:blue; }
+#free-books p.download span { color:green; }
+#free-books p.title a, #free-books p.download a { text-decoration:none; }
+
+#free-books ul { list-style: none; margin:0; padding:0; }
+#free-books ul li { margin:0 0 15px 0; padding:0 0 10px 0; border-bottom:1px solid #cccccc; }
+#free-books ul li div.image { float:left; width:100px; margin:0 10px 0 0; padding:3px; }
+#free-books ul li div.image img { width:100%; border:none; }
+
+/* Smaller than standard 960 (devices and browsers) */
+@media only screen and (min-width: 959px) and (max-width: 1200px) {
+
+}
+
+/* Tablet Portrait size to standard 960 (devices and browsers) */
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+
+}
+
+/* rules for iPad in landscape orientation */
+@media only screen and (device-width: 768px) and (orientation: landscape) {
+
+}
+
+/* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+
+}
+
+/* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
+@media only screen and (min-width: 320px) and (max-width: 479px) {
+#free-books ul li div.image { float:none; width:100%; margin:0 auto; margin-right:0; text-align:center; }
+#free-books ul li div.image img { width:75%; }
+}
+
+@media only screen and (min-width: 240px) and (max-width: 320px) {
+#free-books ul li div.image { float:none; width:100%; margin:0 auto; margin-right:0; text-align:center; }
+}
+
+@media only screen and (max-width: 240px) {
+#free-books ul li div.image { float:none; width:100%; margin:0 auto; margin-right:0; text-align:center; }
+}
