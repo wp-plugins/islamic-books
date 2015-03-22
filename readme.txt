@@ -1,10 +1,10 @@
 === Islamic Books by EDC ===
 Contributors: EDC Team
-Donate link: http://www.edc.org.kw/ar/category/donate/?lang=en
+Donate link: http://www.edc.org.kw
 Tags: Islam, books about islam, free books, discover islam, jihad, women in islam, comparative religion, islam and Christianity, introduction to islam, Islamic books, muslim library, PDF, Quran, EDC
 Requires at least: 3.0
-Tested up to: 3.9
-Stable tag: 1.0
+Tested up to: 4.1.1
+Stable tag: 2.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -30,7 +30,7 @@ Features:
 * Responsive 
 
 
-PS: All the books are from the [Comprehensive Muslim e-Library](http://www.muslim-library.com/) website owned by EDC (E-Da`wah Committee)](http://www.edc.org.kw), For Support click to [Islam.com.kw](http://www.islam.com.kw/support/).
+PS: All the books are from the [Comprehensive Muslim e-Library](http://www.muslim-library.com/) website owned by EDC (E-Da`wah Committee)](http://www.edc.org.kw), For Support click to [Islam.com.kw](http://www.islam.com.kw/).
 
 
 == Installation ==
@@ -44,9 +44,19 @@ PS: All the books are from the [Comprehensive Muslim e-Library](http://www.musli
 
 1. In Widget
 1. Show in Sidebar
+1. Show book in page/post
+1. In dashboard
 
 == Changelog ==
 
 = 1.0 =
 
 * Added: it is new plugin.
+
+= 2.0 =
+
+* Added: added new book.
+* Added: added new functions.
+* Added: more than 260 categories and 88 languages.
+* Fixed: fixed slider.
+* Added: Show books in dashboard.

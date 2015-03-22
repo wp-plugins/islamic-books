@@ -2,100 +2,51 @@
 /* 
  * Languages and Show functionality
  * Author: EDC Team
- * Since: 1.0
+ * Since: 2.0
 */
-include('files.php');
+include('data/Books_categories.php');
+include('data/Books_ids.php');
+include('data/Books_info.php');
 
-$books_languages = array(
-"1"=>array("Afrikaans","za.png"),
-"2"=>array("Albanian","al.png"),
-"3"=>array("Amharic","amharic.png"),
-"4"=>array("Arabic","arle.png"),
-"5"=>array("Armenian","am.png"),
-"6"=>array("Catalan","Catalan.png"),
-"7"=>array("Awari","awari.png"),
-"8"=>array("Azerbaijan","az.png"),
-"9"=>array("Basaa","cm.png"),
-"10"=>array("Bengali","bd.png"),
-"11"=>array("Oromo","Oromo.png"),
-"12"=>array("Bosnian","ba.png"),
-"13"=>array("Brahui","Brahui.png"),
-"14"=>array("Bulgarian","bg.png"),
-"15"=>array("Burmese","mm.png"),
-"16"=>array("Chechen","cc.png"),
-"17"=>array("Chichewa","Chichewa.png"),
-"18"=>array("Chinese","cn.png"),
-"19"=>array("Comorian","comorian.png"),
-"20"=>array("Czech","cs.png"),
-"21"=>array("Danish","dk.png"),
-"22"=>array("Deutsche","de.png"),
-"23"=>array("Dutch","nl.png"),
-"24"=>array("English","gb.png"),
-"25"=>array("Estonian","ee.png"),
-"26"=>array("Falatia","za.png"),
-"27"=>array("Finlandian","fi.png"),
-"28"=>array("French","fr.png"),
-"29"=>array("Fulani","fulani.png"),
-"30"=>array("Georgian","ge.png"),
-"31"=>array("Greek","gr.png"),
-"32"=>array("Hausa","hausa.png"),
-"33"=>array("Hebrew","il.png"),
-"34"=>array("Hindi","in.png"),
-"35"=>array("Hungarian","hu.png"),
-"36"=>array("Icelandic","ax.png"),
-"37"=>array("Indonesia","id.png"),
-"38"=>array("Italian","it.png"),
-"39"=>array("Japanese","jp.png"),
-"40"=>array("Kashmiri","Kashmiri.png"),
-"41"=>array("Kazakh","kz.png"),
-"42"=>array("Khmer","kh.png"),
-"43"=>array("Korean","kr.png"),
-"44"=>array("Kurdish","kd.png"),
-"45"=>array("Kyrgyz","kg.png"),
-"46"=>array("Latvian","lv.png"),
-"47"=>array("Macedonian","mk.png"),
-"48"=>array("Madagascan","mg.png"),
-"49"=>array("Malay","my.png"),
-"50"=>array("Maldivi","mv.png"),
-"51"=>array("Malyalam","in.png"),
-"52"=>array("Maranao","marano.png"),
-"53"=>array("Nko","nko.png"),
-"54"=>array("Nepali","np.png"),
-"55"=>array("Norwegian","bv.png"),
-"56"=>array("Pashto","poshto.png"),
-"57"=>array("Persian","ir.png"),
-"58"=>array("Polish","pl.png"),
-"59"=>array("Portuguese","pt.png"),
-"60"=>array("Romani-gypsy","romani.png"),
-"61"=>array("Romania","ad.alt.png"),
-"62"=>array("Russian","ru.png"),
-"63"=>array("Sindhi","sindhi.png"),
-"64"=>array("Sinhalese","lk.png"),
-"65"=>array("Slovac","sk.png"),
-"66"=>array("Somali","so.png"),
-"67"=>array("Spanish","es.alt.png"),
-"68"=>array("Swahili","swahili.png"),
-"69"=>array("Swedish","se.png"),
-"70"=>array("Tagalog","ph.png"),
-"71"=>array("Tajik","tj.png"),
-"72"=>array("Tamazight","tamazight.png"),
-"73"=>array("Tamil","in.png"),
-"74"=>array("Tashamiya","tashmanai.png"),
-"75"=>array("Tatar","tt.png"),
-"76"=>array("Telugu","in.png"),
-"77"=>array("Thai","th.png"),
-"78"=>array("Tigrinya","tigrinya.png"),
-"79"=>array("Turkish","tr.png"),
-"80"=>array("Turkmen","tk.png"),
-"81"=>array("Ugandan","ug.png"),
-"82"=>array("Ukrainian","ua.png"),
-"83"=>array("Urdu","pk.png"),
-"84"=>array("Uyghur","uyghur.png"),
-"85"=>array("Uzbek","uz.png"),
-"86"=>array("Vietnamese","vn.png"),
-"87"=>array("Yoruba","yo.png"),
-"88"=>array("Zulu","zulu.png")
-);
+  if(get_option( 'WPLANG' ) == "ar"){
+  	 $EDC_words['title'] = 'مكتبة الكتب';
+  	 $EDC_words['category'] = 'القسم:';
+  	 $EDC_words['books'] = 'كتاب';
+  	 $EDC_words['booktitle'] = '<u>عنوان الكتاب:</u>';
+  	 $EDC_words['bookauthor'] = '<u>مؤلف الكتاب:</u>';
+  	 $EDC_words['bookdownload'] = '<u>تحميل الكتاب:</u>';
+  	 $EDC_words['bookimage'] = '<u>صورة الكتاب:</u>';
+  	 $EDC_words['pluginname'] = 'المكتبة الإسلامية الإلكترونية الشاملة';
+  	 $EDC_words['plugindescription'] = 'يتطلع موقع المكتبة الإسلامية الإلكترونية الشاملة إلى أن يكون مصدراً شاملا للكتب التي تتعلق بالإسلام والمسلمين والأديان الأخرى باللغات المختلفة مع إتاحة تحميل هذه الكتب.';
+  	 $EDC_words['insertwidget'] = 'أضف Widget للمكتبة';
+  	 $EDC_words['bookscategories'] = 'أقسام الكتب:';
+  	 $EDC_words['ifempty'] = 'إذا كانت الخانة فارغة فسيتم اختيار القسم المحدد تلقائيا.';
+  	 $EDC_words['selectcategory'] = 'اختر القسم المناسب';
+  	 $EDC_words['shortcode'] = 'انسخ الكود وضعه في المقال أو الصفحة:';
+  	 $EDC_words['update'] = 'تحديث';
+  	 $EDC_words['js'] = 'إن كان هناك مشكلة في عرض الكتب عن طريق السلايدر قم بتعطيل الخاصية';
+  	 $EDC_words['activate'] = 'تفعيل';
+  	 $EDC_words['inactivate'] = 'تعطيل';
+  }else{
+  	 $EDC_words['title'] = 'Islamic Books';
+  	 $EDC_words['category'] = 'Category:';
+  	 $EDC_words['books'] = 'Books';
+  	 $EDC_words['booktitle'] = '<u>Title:</u>';
+  	 $EDC_words['bookauthor'] = '<u>Author:</u>';
+  	 $EDC_words['bookdownload'] = '<u>Download:</u>';
+  	 $EDC_words['bookimage'] = '<u>Image:</u>';
+  	 $EDC_words['pluginname'] = 'Islamic Books Plugin by EDC';
+  	 $EDC_words['plugindescription'] = 'The Islamic Books Plugin by EDC endeavors to be a unique comprehensive online store of free downloadable PDF books about Islam, Muslims, and other faiths in different languages.';
+  	 $EDC_words['insertwidget'] = 'Insert Books by widgets.';
+  	 $EDC_words['bookscategories'] = 'Books Categories:';
+  	 $EDC_words['ifempty'] = 'if empty will write category name.';
+  	 $EDC_words['selectcategory'] = 'Select category name.';
+  	 $EDC_words['shortcode'] = 'Copy shortcode and paste into post/page:';
+  	 $EDC_words['update'] = 'Update';
+  	 $EDC_words['js'] = 'If there is a problem, disable this option.';
+  	 $EDC_words['activate'] = 'Activate';
+  	 $EDC_words['inactivate'] = 'Inactivate';
+  }
 
 class Free_Books_Widget extends WP_Widget {
 
@@ -106,69 +57,133 @@ class Free_Books_Widget extends WP_Widget {
 			array( 'description' => __( 'You can add 1 out of 88 languages', 'edc_free_books_widget' ), ) // Args
 		);
 	}
+
+	public function EDC_BOOKS($language_id="",$booksrand="",$edc_free_books_allow_source="",$edc_free_books_allow_download="",$edc_free_books_allow_read="",$width="",$height="",$edc_slider_type=""){
+	global $EDC_category_info, $EDC_books_id, $EDC_book_info;
+
+	$language_name = $EDC_category_info[$language_id][1];
+	$i = $EDC_books_id[$language_id][$booksrand];
+	$books_count = count($EDC_books_id[$language_id]);
 	
-	function EDC_BOOKS($EDC_BOOK="",$language_id="",$booksrand="",$edc_free_books_allow_source="",$edc_free_books_allow_download="",$edc_free_books_allow_read="",$width="",$height="",$edc_slider_type=""){
-global $books_languages;
-//0 = $EDC_BOOK[$i][0] => id
-//1 = $EDC_BOOK[$i][1] => title
-//2 = $EDC_BOOK[$i][2] => author
-//3 = $EDC_BOOK[$i][3] => file
-//4 = $EDC_BOOK[$i][4] => image
-//5 = $EDC_BOOK[$i][5] => category id
-//6 = $EDC_BOOK[$i][6] => language shortname
-//7 = $EDC_BOOK[$i][7] => source
-
-$language_name = $books_languages[$language_id][0];
-$EDC_BOOK = $EDC_BOOK[''.$language_name.''];
+	$lang_string = explode("/", $EDC_book_info[$i][5]);
+	if($lang_string[3] == ""){
+	$lang_title = '';
+	}else{
+	$lang_title = '?lang='.ucwords($lang_string[3]);
+	}
 	
-$books_count = count($EDC_BOOK);
-$i = $booksrand;
+	if($EDC_book_info[$i][0] == ""){ $title = ''; }else{ $title = $EDC_book_info[$i][0]; }
+	if($EDC_book_info[$i][1] == ""){ $author = ''; }else{ $author = 'Author: '.htmlspecialchars($EDC_book_info[$i][1]).''; }
+	if($EDC_book_info[$i][2] == ""){ $url = ''; }else{ $url = htmlspecialchars($EDC_book_info[$i][2]); }
+	if($EDC_book_info[$i][3] == ""){ $image = ''; }else{ $image = '<img class="edc_image_book" src="'.htmlspecialchars($EDC_book_info[$i][3]).'" alt="'.htmlspecialchars($title).'" title="'.htmlspecialchars($title).'" />'; }
 
-if($EDC_BOOK[$i][1] == ""){ $title = ''; }else{ $title = $EDC_BOOK[$i][1]; }
-if($EDC_BOOK[$i][2] == ""){ $author = ''; }else{ $author = 'Author: '.htmlspecialchars($EDC_BOOK[$i][2]).''; }
-if($EDC_BOOK[$i][7] == ""){ $url = ''; }else{ $url = htmlspecialchars($EDC_BOOK[$i][7]); }
-if($EDC_BOOK[$i][4] == ""){ $image = ''; }else{ $image = '<img class="edc_image_book" src="'.htmlspecialchars($EDC_BOOK[$i][4]).'" alt="'.htmlspecialchars($title).'" title="'.htmlspecialchars($title).'" />'; }
-
-if($EDC_BOOK[$i][3] == ""){
-$download = '';
-}else{
-if($edc_slider_type == 0){
-$download = '<div class="edc_icons_content_for_just_link">';
-}else{
-$download = '<div class="edc_icons_content">';
-}
-if($edc_free_books_allow_source == 1){
-$download .= '<a target="_blank" href="'.htmlspecialchars($EDC_BOOK[$i][7]).'"><img class="edc_icons" src="'.plugin_dir_url( __FILE__ ).'/images/link.png" alt="Go to '.htmlspecialchars($EDC_BOOK[$i][1]).'" title="'.htmlspecialchars($EDC_BOOK[$i][1]).'" /></a>';
-}
-if($edc_free_books_allow_read == 1){
-$download .= '<a target="_blank" href="https://docs.google.com/viewer?url='.htmlspecialchars($EDC_BOOK[$i][3]).'"><img class="edc_icons" src="'.plugin_dir_url( __FILE__ ).'/images/pdf.png" alt="Read '.htmlspecialchars($EDC_BOOK[$i][1]).'" title="Read '.htmlspecialchars($EDC_BOOK[$i][1]).'" /></a>';
-}
-if($edc_free_books_allow_download == 1){
-$download .= '<a target="_blank" href="'.htmlspecialchars($EDC_BOOK[$i][3]).'"><img class="edc_icons" src="'.plugin_dir_url( __FILE__ ).'/images/download.png" alt="Download '.htmlspecialchars($EDC_BOOK[$i][1]).'" title="Download '.htmlspecialchars($EDC_BOOK[$i][1]).'" /></a>';
-}
-$download .= '</div>';
-}
-
+	if($EDC_book_info[$i][2] == ""){
+		$download = '';
+	}else{
+		if($edc_slider_type == 0){
+		$download = '<div class="edc_icons_content_for_just_link">';
+		}else{
+		$download = '<div class="edc_icons_content">';
+		}
+		if($edc_free_books_allow_source == 1){
+		$download .= '<a target="_blank" href="'.htmlspecialchars($EDC_book_info[$i][5]).''.$lang_title.'"><img class="edc_icons" src="'.plugin_dir_url( __FILE__ ).'/images/link.png" alt="Go to '.htmlspecialchars($EDC_book_info[$i][0]).'" title="'.htmlspecialchars($EDC_book_info[$i][0]).'" /></a>';
+		}
+		if($edc_free_books_allow_read == 1){
+		$download .= '<a target="_blank" href="https://docs.google.com/viewer?url='.htmlspecialchars($EDC_book_info[$i][2]).'"><img class="edc_icons" src="'.plugin_dir_url( __FILE__ ).'/images/pdf.png" alt="Read '.htmlspecialchars($EDC_book_info[$i][0]).'" title="Read '.htmlspecialchars($EDC_book_info[$i][0]).'" /></a>';
+		}
+		if($edc_free_books_allow_download == 1){
+		$download .= '<a target="_blank" href="'.htmlspecialchars($EDC_book_info[$i][2]).'"><img class="edc_icons" src="'.plugin_dir_url( __FILE__ ).'/images/download.png" alt="Download '.htmlspecialchars($EDC_book_info[$i][0]).'" title="Download '.htmlspecialchars($EDC_book_info[$i][0]).'" /></a>';
+		}
+		$download .= '</div>';
+	}
 
 	if($books_count == 0){
-		$code = '<div id="books_content_widget">Sorry, Not found books in '.$language_name.' language.</div>';
+		$code = '<div id="books_content_widget">Sorry, Not found books in '.$category_name.' language.</div>';
 	}else{
 		if($edc_slider_type == 0){
 			$code = '<li>'.$download.'<a target="_blank" href="'.$url.'" title="'.$author.'">'.$title.'</a><div style="clear:both;"></div></li>'."\n";
 		}else{
-			if($EDC_BOOK[$i][4] != ""){
-				$code = '<li>'.$download.'<a target="_blank" href="'.$url.'">'.$image.'</a></li>';
+			if($EDC_book_info[$i][3] != ""){
+				$code = '<li><a target="_blank" href="'.$url.'">'.$image.'</a><div style="clear:both;"></div>'.$download.'</li>';
 			}else{
 				$code = '';
 			}
 		}
 	}
 
-return $code;
-}
+	return $code;
+	}
 
+	public function EDC_BOOKS_js($edc_free_books_id=0, $edc_slider_type=1, $view_extracode=0){
+		$code_js = "<script type=\"text/javascript\">"."\n";
+		$code_js .= "(function($){	
+		  $(function(){";
+		$code_js .= "$('#bxslider".$edc_free_books_id."').bxSlider({"."\n";
+		if($edc_slider_type == 1){
+		$code_js .= "mode: 'fade',
+		  captions: true"."\n";
+		$extracode = '';
+		}elseif($edc_slider_type == 2){
+		$code_js .= "auto: true,
+		  autoControls: true"."\n";
+		$extracode = '';
+		}elseif($edc_slider_type == 3){
+		$code_js .= "infiniteLoop: false,
+		  hideControlOnEnd: true"."\n";
+		$extracode = '';
+		}elseif($edc_slider_type == 4){
+		$code_js .= "adaptiveHeight: true,
+		  mode: 'fade'"."\n";
+		$extracode = '';
+		}elseif($edc_slider_type == 5){
+		$code_js .= "slideWidth: 300,
+		    minSlides: 2,
+		    maxSlides: 2,
+		    slideMargin: 10"."\n";
+		$extracode = '';
+		}elseif($edc_slider_type == 6){
+		$code_js .= "minSlides: 2,
+		  maxSlides: 2,
+		  slideWidth: 360,
+		  slideMargin: 10"."\n";
+		$extracode = '';
+		}elseif($edc_slider_type == 7){
+		$code_js .= "minSlides: 3,
+		  maxSlides: 4,
+		  slideWidth: 170,
+		  slideMargin: 10"."\n";
+		$extracode = '';
+		}elseif($edc_slider_type == 8){
+		$code_js .= "mode: 'vertical',
+		  slideMargin: 5"."\n";
+		$extracode = '';
+		}elseif($edc_slider_type == 9){
+		$code_js .= "nextSelector: '#slider-next',
+		  prevSelector: '#slider-prev',
+		  nextText: 'Next &#8594;',
+		  prevText: '&#8592; Prev'"."\n";
+		$extracode = '<div class="outside">
+		<p><span id="slider-prev"></span> | <span id="slider-next"></span></p>
+		</div>';
+		}else{
+		$code_js .= "mode: 'fade',
+		  captions: true"."\n";
+		$extracode = '';
+		}
+		$code_js .= "});"."\n";
+		$code_js .= "});	
+		}(jQuery))";
+		$code_js .= "</script>"."\n";
+	
+	if($view_extracode == 1){
+	return $extracode;
+	}else{
+	return $code_js;
+	}
+	}
+	
 	public function widget( $args, $instance ) {
-		global $books_languages,$EDC_BOOK;
+		global $EDC_BOOK,$EDC_category_info,$EDC_books_id;
 		$title = apply_filters( 'widget_title', $instance['title'] );
 		$edc_free_books_id = $instance['edc_free_books_id'];
 		$edc_free_books_language_shortname = $instance['edc_free_books_language_shortname'];
@@ -184,88 +199,23 @@ return $code;
 		if(empty($edc_free_books_height)){ $height = 244; }else{ $height = $edc_free_books_height; }
 		if(empty($edc_free_books_limit)){ $books_limit = 1; }else{ $books_limit = $edc_free_books_limit; }
 
-$language_name = $books_languages[$edc_free_books_id][0];
-$language_flag = $books_languages[$edc_free_books_id][1];
+	$language_name = $EDC_category_info[$edc_free_books_id][1];
+	$bookscount = count($EDC_books_id[$edc_free_books_id]);
 
-$rands = rand(0,999);
-$languagescount = count($books_languages);
+	if($books_limit > $bookscount){ $limit = $bookscount; }else{ $limit = $books_limit; }
 
-$bookscount = count($EDC_BOOK[''.$language_name.'']);
-if($books_limit > $bookscount){ $limit = $bookscount; }else{ $limit = $books_limit; }
-
-if($edc_free_books_id > $languagescount){
-$code = '<p style="color:red; text-align:center; padding:10px;">Error ID!</p>';
-}else{
-$code_js = "<script type=\"text/javascript\">"."\n";
-$code_js .= "(function($){	
-  $(function(){";
-$code_js .= "$('#bxslider".$edc_free_books_id."').bxSlider({"."\n";
-if($edc_slider_type == 1){
-$code_js .= "mode: 'fade',
-  captions: true"."\n";
-$extracode = '';
-}elseif($edc_slider_type == 2){
-$code_js .= "auto: true,
-  autoControls: true"."\n";
-$extracode = '';
-}elseif($edc_slider_type == 3){
-$code_js .= "infiniteLoop: false,
-  hideControlOnEnd: true"."\n";
-$extracode = '';
-}elseif($edc_slider_type == 4){
-$code_js .= "adaptiveHeight: true,
-  mode: 'fade'"."\n";
-$extracode = '';
-}elseif($edc_slider_type == 5){
-$code_js .= "slideWidth: 300,
-    minSlides: 2,
-    maxSlides: 2,
-    slideMargin: 10"."\n";
-$extracode = '';
-}elseif($edc_slider_type == 6){
-$code_js .= "minSlides: 2,
-  maxSlides: 2,
-  slideWidth: 360,
-  slideMargin: 10"."\n";
-$extracode = '';
-}elseif($edc_slider_type == 7){
-$code_js .= "minSlides: 3,
-  maxSlides: 4,
-  slideWidth: 170,
-  slideMargin: 10"."\n";
-$extracode = '';
-}elseif($edc_slider_type == 8){
-$code_js .= "mode: 'vertical',
-  slideMargin: 5"."\n";
-$extracode = '';
-}elseif($edc_slider_type == 9){
-$code_js .= "nextSelector: '#slider-next',
-  prevSelector: '#slider-prev',
-  nextText: 'Next &#8594;',
-  prevText: '&#8592; Prev'"."\n";
-$extracode = '<div class="outside">
-<p><span id="slider-prev"></span> | <span id="slider-next"></span></p>
-</div>';
-}else{
-$code_js .= "mode: 'fade',
-  captions: true"."\n";
-$extracode = '';
-}
-$code_js .= "});"."\n";
-$code_js .= "});	
-}(jQuery))";
-$code_js .= "</script>"."\n";
-
-if($edc_slider_type == 0){
-$code = '';
-}else{
-$code = $code_js."\n";
-}
+	if($edc_slider_type == 0){
+	$code = '';
+	}else{
+	$code = $this->EDC_BOOKS_js($edc_free_books_id, $edc_slider_type, 0)."\n";
+	}
+	
 $code .= '<div class="edcbooks">'."\n";
+$code .= '<h2>'.$language_name.'</h2>';
 $code .= '<ul id="bxslider'.$edc_free_books_id.'">'."\n";
 for($x=0; $x<$limit; ++$x){
 $booksrand = rand(0,$bookscount-1);
-$code .= $this->EDC_BOOKS($EDC_BOOK, $edc_free_books_id, $booksrand, $edc_free_books_allow_source, $edc_free_books_allow_download, $edc_free_books_allow_read, $width, $height, $edc_slider_type)."\n";
+$code .= $this->EDC_BOOKS($edc_free_books_id, $booksrand, $edc_free_books_allow_source, $edc_free_books_allow_download, $edc_free_books_allow_read, $width, $height, $edc_slider_type)."\n";
 if(($x+1) == $limit){
 $code .= '';
 }else{
@@ -274,8 +224,7 @@ $code .= '';
 }
 $code .= '</ul>'."\n";
 $code .= '</div>'."\n";
-$code .= $extracode;
-}
+$code .= $this->EDC_BOOKS_js($edc_free_books_id, $edc_slider_type, 1);
 
 		echo $args['before_widget'];
 		if ( ! empty( $title ) )
@@ -285,7 +234,7 @@ $code .= $extracode;
 	}
 
 	public function form( $instance ) {
-		global $books_languages;
+		global $EDC_category;
 		if ( isset( $instance[ 'title' ] ) ) {
 			$title = $instance[ 'title' ];
 			$edc_free_books_id = $instance['edc_free_books_id'];
@@ -299,6 +248,15 @@ $code .= $extracode;
 			$edc_slider_type = $instance['edc_slider_type'];
 		}else{
 			$title = __( 'Islamic Books', 'edc_free_books_widget' );
+			$edc_free_books_id = 2;
+			$edc_free_books_language_shortname = '';
+			$edc_free_books_allow_source = 1;
+			$edc_free_books_allow_download = 1;
+			$edc_free_books_allow_read = 1;
+			$edc_free_books_width = '';
+			$edc_free_books_height = '';
+			$edc_free_books_limit = 10;
+			$edc_slider_type = 1;
 		}
 		?>
 		<p>
@@ -307,9 +265,14 @@ $code .= $extracode;
 		</p>
 		
 		<p>
+
 		<select id="<?php echo $this->get_field_id('edc_free_books_id'); ?>" name="<?php echo $this->get_field_name('edc_free_books_id'); ?>">
-		<?php for($i = 1; $i <= count($books_languages); $i++): ?>
-		<option title="<?php echo $books_languages[$i][0]; ?>" value="<?php echo $i; ?>" <?php echo ( $edc_free_books_id == $i ) ? 'selected="selected"' : ''; ?>><?php echo $i.'- '.$books_languages[$i][0]; ?></option>
+		<?php for($i = 1; $i <= count($EDC_category); $i++): ?>
+		<?php if($EDC_category[$i][4] == 0){ ?>
+		<option title="<?php echo $EDC_category[$i][1]; ?>" value="<?php echo intval($EDC_category[$i][0]); ?>" <?php echo ( $edc_free_books_id == intval($EDC_category[$i][0]) ) ? 'selected="selected"' : ''; ?>><?php echo $EDC_category[$i][1]; ?></option>
+		<?php }else{?>
+		<option title="<?php echo $EDC_category[$i][1]; ?>" value="<?php echo intval($EDC_category[$i][0]); ?>" <?php echo ( $edc_free_books_id == intval($EDC_category[$i][0]) ) ? 'selected="selected"' : ''; ?>><?php echo '- '.$EDC_category[$i][1]; ?></option>
+		<?php } ?>
 		<?php endfor; ?>
 		</select>
 		<label for="<?php echo $this->get_field_id('edc_free_books_id'); ?>"> 
