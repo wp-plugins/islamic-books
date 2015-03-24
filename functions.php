@@ -58,7 +58,7 @@ class Free_Books_Widget extends WP_Widget {
 		);
 	}
 
-	public function EDC_BOOKS($language_id="",$booksrand="",$edc_free_books_allow_source="",$edc_free_books_allow_download="",$edc_free_books_allow_read="",$width="",$height="",$edc_slider_type=""){
+	public function EDC_BOOKS($language_id="",$booksrand="",$edc_free_books_allow_source="",$edc_free_books_allow_download="",$edc_free_books_allow_read="",$width="",$height="",$edc_slider_type="",$edc_free_books_allow_title=0){
 	global $EDC_category_info, $EDC_books_id, $EDC_book_info;
 
 	$language_name = $EDC_category_info[$language_id][1];
@@ -189,6 +189,7 @@ class Free_Books_Widget extends WP_Widget {
 		$edc_free_books_language_shortname = $instance['edc_free_books_language_shortname'];
 		$edc_free_books_allow_source = $instance['edc_free_books_allow_source'];
 		$edc_free_books_allow_download = $instance['edc_free_books_allow_download'];
+		$edc_free_books_allow_title = $instance['edc_free_books_allow_title'];
 		$edc_free_books_allow_read = $instance['edc_free_books_allow_read'];
 		$edc_free_books_width = $instance['edc_free_books_width'];
 		$edc_free_books_height = $instance['edc_free_books_height'];
@@ -211,11 +212,15 @@ class Free_Books_Widget extends WP_Widget {
 	}
 	
 $code .= '<div class="edcbooks">'."\n";
+if($edc_free_books_allow_title == 1){
 $code .= '<h2>'.$language_name.'</h2>';
+}else{
+$code .= '';
+}
 $code .= '<ul id="bxslider'.$edc_free_books_id.'">'."\n";
 for($x=0; $x<$limit; ++$x){
 $booksrand = rand(0,$bookscount-1);
-$code .= $this->EDC_BOOKS($edc_free_books_id, $booksrand, $edc_free_books_allow_source, $edc_free_books_allow_download, $edc_free_books_allow_read, $width, $height, $edc_slider_type)."\n";
+$code .= $this->EDC_BOOKS($edc_free_books_id, $booksrand, $edc_free_books_allow_source, $edc_free_books_allow_download, $edc_free_books_allow_read, $width, $height, $edc_slider_type, $edc_free_books_allow_title)."\n";
 if(($x+1) == $limit){
 $code .= '';
 }else{
@@ -246,6 +251,7 @@ $code .= $this->EDC_BOOKS_js($edc_free_books_id, $edc_slider_type, 1);
 			$edc_free_books_height = $instance['edc_free_books_height'];
 			$edc_free_books_limit = $instance['edc_free_books_limit'];
 			$edc_slider_type = $instance['edc_slider_type'];
+			$edc_free_books_allow_title = $instance['edc_free_books_allow_title'];
 		}else{
 			$title = __( 'Islamic Books', 'edc_free_books_widget' );
 			$edc_free_books_id = 2;
@@ -257,6 +263,7 @@ $code .= $this->EDC_BOOKS_js($edc_free_books_id, $edc_slider_type, 1);
 			$edc_free_books_height = '';
 			$edc_free_books_limit = 10;
 			$edc_slider_type = 1;
+			$edc_free_books_allow_title = 1;
 		}
 		?>
 		<p>
@@ -300,6 +307,14 @@ $code .= $this->EDC_BOOKS_js($edc_free_books_id, $edc_slider_type, 1);
 		<?php _e('Download icon', 'edc_free_books_widget'); ?>
 		</label>
 		</p>
+			
+		<p>
+		<label for="<?php echo $this->get_field_id('edc_free_books_allow_title'); ?>"> 
+		<input id="<?php echo $this->get_field_id('edc_free_books_allow_title'); ?>" name="<?php echo $this->get_field_name('edc_free_books_allow_title'); ?>" type="checkbox" <?php if($edc_free_books_allow_title) { echo 'checked="checked"'; } ?> /> 
+		<?php _e('Show title', 'edc_free_books_widget'); ?>
+		</label>
+		</p>
+		
 		<!--
 		<p>
 		<label for="<?php echo $this->get_field_id( 'edc_free_books_width' ); ?>"><?php _e( 'Image width:' ); ?></label> 
@@ -347,6 +362,7 @@ $code .= $this->EDC_BOOKS_js($edc_free_books_id, $edc_slider_type, 1);
 		$instance['edc_free_books_allow_source'] = ( isset( $new_instance['edc_free_books_allow_source'] ) ? 1 : 0 );
 		$instance['edc_free_books_allow_read'] = ( isset( $new_instance['edc_free_books_allow_read'] ) ? 1 : 0 );
 		$instance['edc_free_books_allow_download'] = ( isset( $new_instance['edc_free_books_allow_download'] ) ? 1 : 0 );
+		$instance['edc_free_books_allow_title'] = ( isset( $new_instance['edc_free_books_allow_title'] ) ? 1 : 0 );
 		$instance['edc_slider_type'] = intval($new_instance['edc_slider_type']);
 		return $instance;
 	}
