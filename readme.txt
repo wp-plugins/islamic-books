@@ -30,7 +30,7 @@ Features:
 * Responsive 
 
 
-PS: All the books are from the [Comprehensive Muslim e-Library](http://www.muslim-library.com/) website owned by EDC (E-Da`wah Committee)](http://www.edc.org.kw), For Support click to [Islam.com.kw](http://www.islam.com.kw/).
+PS: All the books are from the [Comprehensive Muslim e-Library](http://www.muslim-library.com/) website owned by EDC [(E-Da`wah Committee)](http://www.edc.org.kw), For Support click to [Islam.com.kw](http://www.islam.com.kw/).
 
 
 == Installation ==
