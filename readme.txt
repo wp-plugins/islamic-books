@@ -18,7 +18,7 @@ The Islamic Books Plugin by EDC endeavors to be a unique comprehensive online st
 Features:
 
 * Free plugin
-* More than 6000 books in PDF Format
+* More than 7000 books in PDF Format
 * Books are available in 88 languages 
 * Direct download via Google Docs Viewer
 * Displaying books in Widgets. More than one language can be installed.  
