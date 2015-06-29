@@ -3,8 +3,8 @@ Contributors: EDC Team
 Donate link: http://www.edc.org.kw
 Tags: Islam, books about islam, free books, discover islam, jihad, women in islam, comparative religion, islam and Christianity, introduction to islam, Islamic books, muslim library, PDF, Quran, EDC
 Requires at least: 3.0
-Tested up to: 4.1.1
-Stable tag: 2.0
+Tested up to: 4.2.2
+Stable tag: 2.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -49,9 +49,10 @@ PS: All the books are from the [Comprehensive Muslim e-Library](http://www.musli
 
 == Changelog ==
 
-= 1.0 =
+= 2.1 =
 
-* Added: it is new plugin.
+* Added: added new book.
+* Fixed: fixed slider.
 
 = 2.0 =
 
@@ -60,3 +61,9 @@ PS: All the books are from the [Comprehensive Muslim e-Library](http://www.musli
 * Added: more than 260 categories and 88 languages.
 * Fixed: fixed slider.
 * Added: Show books in dashboard.
+
+= 1.0 =
+
+* Added: it is new plugin.
+
+

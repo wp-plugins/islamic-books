@@ -4,9 +4,9 @@
 .sidebar .widget .edcbooks ul {margin:7px 0 15px 0;}
 .outside { text-align:center; }
 .edc_icons_content { width:100%; text-align:center; margin:0; position:absolute; top:0; left:0; background: #666\9; background: rgba(80, 80, 80, 0.75); }
-.edc_icons_content img {  display: inline-block; width:16px; height:16px; border:none; }
+.edc_icons_content img {  display: inline-block; width:16px; height:16px; border:none; min-width: 16px; }
 .edc_icons_content_for_just_link { float:right; margin:0; }
-.edc_icons_content_for_just_link img { display: inline-block; width:18px; height:18px; }
+.edc_icons_content_for_just_link img { display: inline-block; width:18px; height:18px; margin:0 2px; }
 .edc_icons { border:none; margin:10px 0 3px 0; }
 
 #free-books { margin:0; border:0px solid #cccccc; padding:0; }

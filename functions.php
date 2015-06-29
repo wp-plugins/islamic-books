@@ -2,7 +2,7 @@
 /* 
  * Languages and Show functionality
  * Author: EDC Team
- * Since: 2.0
+ * Since: 2.1
 */
 include('data/Books_categories.php');
 include('data/Books_ids.php');
